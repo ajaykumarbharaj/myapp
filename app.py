@@ -1,15 +1,16 @@
 from flask import Flask,render_template,redirect
-from forms import LoginForm
+
 
 app = Flask(__name__)
 app.config.update(
     TESTING=True,
-    SECRET_KEY='192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
+    SECRET_KEY='ops_digital_asset'
 )
 
 @app.route('/',methods=['GET','POST'])
 def login():
-    return "<h1>running workflow by ajay</h1>"
+    user={"name":"Ajay"}
+    return render_template("index.html",user=user)
 
  
 if __name__ == "__main__":
